@@ -927,7 +927,8 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-color: orangered;
+    background-color:var(--accent-color);
+    border-radius: 2px;
 }
 
 .policy-link {
