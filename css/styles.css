@@ -919,6 +919,9 @@ img {
     background-image: url(../images/icon-check.svg);
     background-repeat: no-repeat;
     cursor: pointer;
+    /* background-color: transparent;
+
+    transition: background-color 250ms var(--primary-cubic-bezier); */
 }
 
 .modal-policy-check:checked + .modal-policy-label::before{
