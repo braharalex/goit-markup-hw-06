@@ -585,6 +585,13 @@ img {
     background-color: transparent;
     color: var(--light-text-color);
     outline: transparent;
+
+    transition: border-color 250ms var(--primary-cubic-bezier);
+}
+
+.subscribe-input:focus,
+.subscribe-input:hover {
+    border-color: var(--accent-color);
 }
 
 .subscribe-input::placeholder {
@@ -813,8 +820,8 @@ img {
  /* ---MODAL FORM--- */
 .modal-form {
     padding: 40px;
-    min-width: 528px;
-    min-height: 581px;
+    width: 528px;
+    height: 581px;
 
     background-color: var(--primary-bgd-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -824,6 +831,7 @@ img {
 .modal-form-title {
     margin-bottom: 12px;
 
+    font-weight: 700;
     font-size: 20px;
     line-height: 1.15;
     text-align: center;
@@ -835,9 +843,13 @@ img {
     margin-bottom: 10px;
 }
 
+.modal-form-item:last-child {
+    margin-bottom: 20px;
+}
+
 .modal-form-label {
     display: block;
-    padding-bottom: 4px;
+    margin-bottom: 4px;
 
     font-weight: 400;
     font-size: 12px;
@@ -863,15 +875,14 @@ img {
     display: block;
     width: 100%;
     min-height: 40px;
-    padding-top: 12px;
+    padding-top: 11px;
     padding-right: 16px;
-    padding-bottom: 12px;
+    padding-bottom: 11px;
     padding-left: 42px;
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     outline: transparent;
-    cursor: pointer;
     transition: border-color 250ms var(--primary-cubic-bezier);
 }
 
@@ -901,13 +912,13 @@ img {
 }
 
 .modal-form-policy {
-    margin-top: 20px;
     margin-bottom: 30px;
 }
 
 .modal-policy-label {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     line-height: 1.71;
 }
@@ -945,6 +956,8 @@ img {
     position: absolute;
     top: 0;
     left: 0;
+
+    transition: background-color 250ms var(--primary-cubic-bezier);
 }
 
 .modal-icon-checked {
@@ -952,17 +965,18 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    transition: background-color 250ms var(--primary-cubic-bezier), fill 250ms var(--primary-cubic-bezier);
 }
 
-.modal-policy-check:checked + label > span .modal-icon-check {
-    fill:transparent;
-}
-
-
-.modal-policy-check:checked + label > span svg {
-    background-color: orangered;
+.modal-policy-check:checked + label > span svg{
+    background-color: var(--accent-color);
     fill: #ffffff;
     border-radius: 2px;
+}
+
+.modal-policy-check:checked+label>span .modal-icon-check {
+    fill: transparent;
 }
 
 .policy-link {
