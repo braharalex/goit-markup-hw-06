@@ -790,6 +790,17 @@ img {
 
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+
+    transition: color 250ms var(--primary-cubic-bezier);
+ }
+
+ .modal-close:hover,
+ .modal-close:focus {
+    color: var(--accent-color);
+ }
+
+ .modal-icon {
+    fill: currentColor;
  }
 
  .is-hidden {
@@ -819,20 +830,12 @@ img {
     color: var(--title-text-color);
 }
 
-.modal-form-item {
-    display: flex;
-    flex-direction: column;
-}
-
 .modal-form-item:not(:last-child) {
     margin-bottom: 10px;
 }
 
-/* .modal-form-item:last-child {
-    margin-bottom: 20px;
-} */
-
 .modal-form-label {
+    display: block;
     padding-bottom: 4px;
 
     font-weight: 400;
@@ -842,15 +845,19 @@ img {
     color: var(--primary-text-color);
 }
 
-.modal-form-input {
+.modal-input-wrapper {
     position: relative;
 }
 
 .modal-form-icon {
     position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    transition: fill 250ms var(--primary-cubic-bezier);
 }
 
-.modal-form-item input,
+.modal-form-input,
 .modal-form-comment {
     display: block;
     width: 100%;
@@ -864,19 +871,69 @@ img {
     border-radius: 4px;
     outline: transparent;
     cursor: pointer;
+    transition: border-color 250ms var(--primary-cubic-bezier);
 }
 
+.modal-form-input:focus,
+.modal-form-input:hover,
+.modal-form-comment:focus,
+.modal-form-comment:hover {
+    border-color: var(--accent-color);
+}
+
+.modal-form-input:focus + svg,
+.modal-form-input:hover + svg {
+    fill: var(--accent-color);
+}
 
 .modal-form-comment {
     min-height: 120px;
     padding-left: 16px;
     resize: none;
+}
 
+.modal-form-comment::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
 }
 
 .modal-form-policy {
     margin-top: 20px;
     margin-bottom: 30px;
+}
+
+.modal-policy-label {
+    display: flex;
+    align-items: center;
+
+    line-height: 1.71;
+}
+
+.modal-policy-label::before {
+    content: "";
+    width: 16px;
+    height: 15px;
+    margin-right: 9px;
+    background-image: url(../images/icon-check.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.modal-policy-check:checked + .modal-policy-label::before{
+    border: none;
+    background-image: url(../images/icon-checkedd.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: orangered;
+}
+
+.policy-link {
+    margin-left: 5px;
+
+    color: var(--accent-color);
 }
 
 .modal-form-submit {
@@ -889,10 +946,6 @@ img {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.modal-form-btn:focus,
-.modal-form-btn:hover {
-    box-shadow:  4px 4px rgba(0, 0, 0, 0.25);
-}
 
 
 
