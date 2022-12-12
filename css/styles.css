@@ -911,7 +911,7 @@ img {
     line-height: 1.71;
 }
 
-.modal-policy-label::before {
+ /* .modal-policy-label::before {
     content: "";
     width: 16px;
     height: 15px;
@@ -919,9 +919,7 @@ img {
     background-image: url(../images/icon-check.svg);
     background-repeat: no-repeat;
     cursor: pointer;
-    /* background-color: transparent;
-
-    transition: background-color 250ms var(--primary-cubic-bezier); */
+   
 }
 
 .modal-policy-check:checked + .modal-policy-label::before{
@@ -931,6 +929,38 @@ img {
     background-position: center;
     background-size: contain;
     background-color:var(--accent-color);
+    border-radius: 2px;
+}  */
+
+.modal-policy-wrapper {
+    position: relative;
+    width: 16px;
+    height: 15px;
+    margin-right: 9px;
+
+}
+
+.modal-icon-check {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal-icon-checked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-policy-check:checked + label > span .modal-icon-check {
+    fill:transparent;
+}
+
+
+.modal-policy-check:checked + label > span svg {
+    background-color: orangered;
+    fill: #ffffff;
     border-radius: 2px;
 }
 
