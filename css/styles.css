@@ -839,11 +839,11 @@ img {
     color: var(--title-text-color);
 }
 
-.modal-form-item:not(:last-child) {
+.modal-form-item {
     margin-bottom: 10px;
 }
 
-.modal-form-item:last-child {
+.modal-form-item:nth-child(5n) {
     margin-bottom: 20px;
 }
 
